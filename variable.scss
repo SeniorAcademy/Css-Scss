@@ -1,0 +1,22 @@
+
+
+.boxModel {
+    height: 5vh;
+    width: 10vw;
+    background-color: $container;
+    color: $header;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 4vh;
+  }
+  
+  .boxModelSecond {
+    // height: 200px;
+    background-color: $box;
+    color: $container;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 200px;
+    font-size: 24px;
+    font-weight: 700;
+  }

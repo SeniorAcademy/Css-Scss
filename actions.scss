@@ -1,0 +1,25 @@
+// MIXIN AND INCLUDE
+
+////   1
+@mixin borderStyle($width, $style, $color) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+  }
+  
+  ////   2
+  @mixin flex($value) {
+    display: flex;
+    align-items: center;
+    justify-content: $value;
+  }
+  
+  ////   3
+  @mixin grid($value) //, $value2
+   {
+    display: grid;
+    gap: 1.5rem;
+    // grid-template-columns: repeat(auto-fit, minmax($value, $value2));
+    grid-template-columns: repeat($value, 1fr);
+    margin: 200px 100px;
+  }

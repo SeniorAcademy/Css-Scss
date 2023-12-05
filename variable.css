@@ -1,0 +1,19 @@
+.boxModel {
+  height: 5vh;
+  width: 10vw;
+  background-color: #333;
+  color: rgb(193, 193, 0);
+  text-align: center;
+  border-radius: 4px;
+  line-height: 4vh;
+}
+
+.boxModelSecond {
+  background-color: #67e6dc;
+  color: #333;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 200px;
+  font-size: 24px;
+  font-weight: 700;
+}/*# sourceMappingURL=variable.css.map */
