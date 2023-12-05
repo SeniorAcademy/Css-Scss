@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  $breakpoint-tablet: 768px;
+  
+  //////////////////////////////////////////////////////////////////////////
+  //  Default reng tanimlamaq
+  $bColor: #ccc !default;
+  $container: #333 !default;
+  $header: rgb(193, 193, 0) !default;
+  $box: #67e6dc !default;
+  $border: rgb(75, 250, 75) !default;
+  
+  //////////////////////////////////////////////////////////////////////////
+  // EXTEND ETMEK
+  // hazirladigin bu modeli her yerde cagirib istifade ede bilersen
+  /// 1
+  .boxModel {
+    height: 5vh;
+    width: 10vw;
+    background-color: $container;
+    color: $header;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 4vh;
+  }
+  /// 2
+  .boxModelSecond {
+    // height: 200px;
+    background-color: $box;
+    color: $container;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 200px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  ///////////////////////////////////////////////////////////////
+  ///
+  // MIXIN AND INCLUDE
+  
+  ////   1
+  @mixin borderStyle($width, $style, $color) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+  }
+  
+  ////   2
+  @mixin flex($value) {
+    display: flex;
+    align-items: center;
+    justify-content: $value;
+  }
+  
+  ////   3
+  @mixin grid($value) //, $value2
+   {
+    display: grid;
+    gap: 1.5rem;
+    // grid-template-columns: repeat(auto-fit, minmax($value, $value2));
+    grid-template-columns: repeat($value, 1fr);
+    margin: 200px 100px;
+  }
+  
+  //////////////////////////////////////////////////////////////////
+  body {
+    background-color: $bColor;
+  
+    .container {
+      height: 100vh;
+      background-color: $container;
+  
+      header {
+        height: 10vh;
+        width: 100%;
+        background-color: $header;
+  
+        ul {
+          height: 100%;
+          // display: flex;
+          // align-items: center;
+          // justify-content: space-around;
+          @include flex(space-around);
+          @media (max-width: $breakpoint-tablet) {
+            @include flex(center);
+          }
+  
+          li {
+            list-style: none;
+  
+            a {
+              text-decoration: none;
+              padding: 20px;
+              font-size: 24px;
+              color: $container;
+              transition: 0.5s ease-in-out;
+  
+              &:hover {
+                color: $box;
+              }
+            }
+          }
+        }
+  
+        .boxes {
+          height: 100%;
+          background-color: $box;
+          margin-top: 40px;
+          // display: flex;
+          // justify-content: space-around;
+          // align-items: center;
+          @include flex(space-around);
+          @media (max-width: $breakpoint-tablet) {
+            @include flex(center);
+          }
+  
+          .box {
+            @extend .boxModel;
+            @include borderStyle(3px, solid, blue);
+          }
+  
+          .boxLast {
+            @extend .boxModel;
+            @include borderStyle(6px, dashed, green);
+          }
+        }
+      }
+  
+      .parent {
+        // @include grid(300px , 1fr); //600px
+        @include grid(3);
+        @media (max-width: $breakpoint-tablet) {
+          @include grid(1);
+        }
+  
+        .child {
+          @extend .boxModelSecond;
+        }
+      }
+    }
+  }
+  

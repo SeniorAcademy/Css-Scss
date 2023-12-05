@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.boxModel, body .container header .boxes .boxLast, body .container header .boxes .box {
+  height: 5vh;
+  width: 10vw;
+  background-color: #333;
+  color: rgb(193, 193, 0);
+  text-align: center;
+  border-radius: 4px;
+  line-height: 4vh;
+}
+
+.boxModelSecond, body .container .parent .child {
+  background-color: #67e6dc;
+  color: #333;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 200px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+body {
+  background-color: #ccc;
+}
+body .container {
+  height: 100vh;
+  background-color: #333;
+}
+body .container header {
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(193, 193, 0);
+}
+body .container header ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  body .container header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+body .container header ul li {
+  list-style: none;
+}
+body .container header ul li a {
+  text-decoration: none;
+  padding: 20px;
+  font-size: 24px;
+  color: #333;
+  transition: 0.5s ease-in-out;
+}
+body .container header ul li a:hover {
+  color: #67e6dc;
+}
+body .container header .boxes {
+  height: 100%;
+  background-color: #67e6dc;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  body .container header .boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+body .container header .boxes .box {
+  border-width: 3px;
+  border-style: solid;
+  border-color: blue;
+}
+body .container header .boxes .boxLast {
+  border-width: 6px;
+  border-style: dashed;
+  border-color: green;
+}
+body .container .parent {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 200px 100px;
+}
+@media (max-width: 768px) {
+  body .container .parent {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 200px 100px;
+  }
+}/*# sourceMappingURL=all.css.map */
